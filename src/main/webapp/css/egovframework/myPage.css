@@ -1,0 +1,252 @@
+@charset "UTF-8";
+
+/*메뉴바 우측 상단 미니프로필*/
+.mini-profile {
+	width: 24px;
+	height: 24px;
+	border-radius: 70%;
+	overflow: hidden;
+}
+
+/*피드박스 좌측 상단 미니프로필*/
+.main-profile {
+	width: 150px;
+	height: 150px;
+	border-radius: 70%;
+	overflow: hidden;
+}
+
+/*프로필사진들*/
+.profile {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.modal-overlay {
+	/* position: absolute;*/
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: none;
+	z-index: 1;
+	background-color: rgba(0, 0, 0, 0.4);
+	animation: showText1 0.5s;
+}
+
+.modal-overlay.active {
+	display: flex;
+}
+
+.modal_body {
+	/*   position: absolute;*/
+	position: relative;
+	top: 50%;
+	left: 50%;
+	width: 1200px;
+	height: 900px;
+	text-align: center;
+	background-color: rgb(255, 255, 255);
+	border-radius: 5px;
+	box-shadow: 0 2px 3px 0 rgba(34, 36, 38, 0.15);
+	transform: translateX(-50%) translateY(-50%);
+	font-size: 13px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	line-height: 50px;
+}
+
+.modal-text {
+	border-bottom: 0;
+	border-left: 0;
+	border-right: 0;
+	border-top: 1px solid #dbdbdb;
+	background-color: white;
+}
+
+.modal-image {
+	height: 900px;
+	width: 750px;
+	object-fit: cover;
+}
+
+.profilepage-image {
+	width: 273px;
+	height: 273px;
+	object-fit: cover;
+	margin: 20px 0;
+}
+
+.close-area {
+	background-color: rgba(0, 0, 0, 0.01);
+	border: none;
+	border-radius: 10px;
+	width: 30px;
+	height: 30px;
+	font-size: 24px;
+	color: #fafafa;
+	float: right;
+}
+
+/* 피드 리스트 */
+.feed-list {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	padding-left: 0;
+	margin-top: 50px;
+}
+
+.feed-list li {
+	cursor: pointer;
+	width: calc(100%/ 3 - 10px);
+}
+
+.feed-list li img {
+	width: 100%;
+	height: 300px;
+	margin-bottom: 15px;
+}
+
+/*피드박스 좌측 상단 미니프로필*/
+.box-profile {
+	width: 33px;
+	height: 33px;
+	border-radius: 70%;
+	overflow: hidden;
+	object-fit: cover;
+	margin-left: 12px;
+}
+
+/*슬라이드 이미지*/
+.carousel {
+	flex-grow: 1;
+}
+
+.carousel-item {
+	width: 100%;
+	height: 900px;
+}
+
+.d-block {
+	display: block;
+	width: 100%;
+	height: 600px;
+	object-fit: cover;
+	overflow: hidden;
+}
+
+.detail-img {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	overflow: hidden;
+}
+
+.profilepage-image {
+	width: 290px;
+	height: 290px;
+	object-fit: cover;
+	margin: 20px 0;
+}
+
+/* 디테일 팝업 댓글 영역 */
+.comment-list {
+	margin-top: 12px;
+	flex-grow: 1;
+}
+
+.comment-detail .username {
+	margin: 0 8px;
+}
+
+.form-control {
+	box-shadow: none;
+	border: none;
+	border-radius: 0px;
+	padding: 10px 0 !important;
+	width: 420px;
+}
+
+.upload_btn {
+	width: 80px;
+	padding: 0;
+}
+
+/* 답글달기, 삭제 padding */
+.comment-btn {
+	padding-left: 10px;
+}
+
+.commnet-heart {
+	padding-left: 10px;
+}
+
+/* 프로필편집 팝업 */
+.post-upload {
+	display: none; /* 초기 상태에서 숨김 */
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: white;
+	border: 1px solid #c7c7c7;
+	padding: 20px;
+	z-index: 1000; /* 다른 요소 위에 표시되도록 설정 */
+}
+
+.overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5); /* 반투명 배경 */
+	display: none; /* 기본적으로 숨김 */
+	z-index: 999; /* 팝업보다 아래에 표시 */
+}
+
+/* 프로필편집 */
+.button-container {
+	margin-left: -160px;
+	margin-top: 5px;
+	display: flex;
+	flex-direction: row;
+}
+
+.profile-edit {
+	background-color: #fafafa;
+	border: 1px solid #c7c7c7;
+	border-radius: 3px;
+	font-weight: bold;
+	padding: 3px 8px;
+	font-size: 14px;
+}
+
+.settings-button {
+	border: none;
+	background-color: #fafafa;
+	margin-left: 10px;
+}
+
+ #postImg {
+    border-radius: 50%; /* 원형으로 만들기 */
+    overflow: hidden; /* 자식 요소가 부모 영역을 벗어나지 않도록 하기 */
+    border: 5px solid #3498db; /* 테두리 두께와 색상 (예: 파란색) */
+    position: relative; /* 자식 요소의 절대 위치를 위한 설정 */
+  }
+
+
+@
+keyframes showText1 {from { transform:translateX(0px);
+	opacity: 0;
+}
+
+to {
+	transform: translateX(0px);
+	opacity: 1;
+}

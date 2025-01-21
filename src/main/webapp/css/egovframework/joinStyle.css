@@ -1,0 +1,24 @@
+@charset "UTF-8";
+
+.input-box {
+  padding: 40px;
+}
+
+.join-para {
+  margin-bottom: 20px;
+  font-size: 13px;
+  font-weight: 700;
+  text-align: center;
+  color: var(--txt-second-color);
+}
+
+.more-info {
+  margin: 20px 0;
+  font-size: 11px;
+  text-align: center;
+
+  a {
+    font-weight: 700;
+    color: var(--dark-blue);
+  }
+}

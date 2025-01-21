@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="AdminDAO">
+
+	<select id="selectAdminLoginInfo" parameterType="java.util.HashMap" resultType="java.util.HashMap">
+	    SELECT  user_id AS id,
+	            user_name AS name,
+	            user_idx AS userIdx
+	    FROM tb_user
+	    WHERE user_id = #{userId}
+	    AND user_pw = #{userPw}
+	    AND use_yn = 'Y'
+	</select>
+	
+	<select id="selectFeedList" parameterType="java.util.HashMap" resultType="java.util.HashMap">
+				 SELECT
+				         feed.feed_idx AS feedIdx,
+				         feed.feed_content AS feedContent,
+				         feed.feed_hashtag AS feedHashtag,
+				         feed.create_id AS createId,
+				         feed.create_date AS createDate,
+				         <![CDATA[
+				         case when (timestampdiff(minute, feed.create_date, now()) > 60 && timestampdiff(minute, feed.create_date, now()) < 24*60) then concat(timestampdiff(hour, feed.create_date, now()), '시간')
+				         when (timestampdiff(minute, feed.create_date, now()) > 24*60) then concat(timestampdiff(day, feed.create_date, now()), '일')
+				         else concat(timestampdiff(minute, feed.create_date, now()), '분')  end as timeDiffer,
+				         ]]>
+				         feed.update_id AS updateId,
+				         feed.update_date AS updateDate,
+				          ifnull(fl.use_yn, 'N') AS likeYn, 
+				          (SELECT count(fi.feed_idx) FROM tb_feed_like fi
+				          WHERE feed.feed_idx = fi.feed_idx
+				          AND fi.use_yn = 'Y'
+				          ) AS likeCount
+				      FROM tb_feed feed
+				      LEFT JOIN tb_feed_like fl
+				      ON feed.feed_idx = fl.feed_idx
+				      AND fl.create_id = #{userId}
+				      AND fl.use_yn = 'Y'
+				      WHERE feed.use_yn = 'Y'
+				      <if test="searchKeyword != '' and searchKeyword != null and searchKeyword != 'undefined'">
+				              AND feed.feed_hashtag LIKE concat('%', #{searchKeyword}, '%')
+				      </if>
+				      ORDER BY feed.create_date DESC
+   </select>
+	
+	<insert id="insertMember" parameterType="java.util.HashMap">
+		INSERT INTO tb_user(
+			user_id,
+			user_pw,
+	        user_email,
+			user_name,
+			create_id,
+	        use_yn,
+	        create_date,
+			update_id,
+	        update_date
+	        ) VALUES (
+			#{userId},
+			#{userPw},
+	        #{userEmail},
+			#{userName},
+			#{userId},
+			'Y',
+			CURRENT_TIMESTAMP(),
+	        #{userId},
+	        CURRENT_TIMESTAMP()
+		)
+	</insert>
+	
+	<insert id="insertFeed" parameterType="java.util.HashMap">
+		INSERT INTO tb_feed (
+		    feed_content,
+		    feed_hashtag,
+		    use_yn,
+		    create_id,
+		    create_date,
+		    update_id,
+		    update_date
+		) VALUES (
+		    #{feedContent},
+		    #{feedHashtag},
+		    'Y',
+		    #{userId},
+		    CURRENT_TIMESTAMP(),
+		    #{userId},
+		    CURRENT_TIMESTAMP()
+		);
+	</insert>
+	
+ 	<update id="updateFeed" parameterType="java.util.HashMap">
+		UPDATE tb_feed
+		SET feed_content = #{feedContent},
+		    feed_hashtag = #{feedHashtag},
+		    update_id = #{userId},
+		    update_date = CURRENT_TIMESTAMP()
+		WHERE feed_idx = #{feedIdx}
+
+	</update> 
+	
+	<!-- 파일 영역 -->
+	<select id="getFileGroupMaxSeq" resultType="int">
+		SELECT ifnull(MAX(feed_idx), 0) FROM tb_feed
+	</select>
+	
+	<insert id="insertFileAttr" parameterType="java.util.HashMap">
+		INSERT INTO tb_file_attr(
+			feed_idx,
+			original_file_name,
+			save_file_name,
+			file_path,
+			file_size,
+			file_ext,
+			create_id,
+			create_date,
+			update_id,
+			update_date		
+		) VALUES(
+			#{feedIdx},
+			#{originalFileName},
+			#{saveFileName},
+			#{saveFilePath},
+			#{fileSize},
+			#{fileExt},
+			#{userId},
+			CURRENT_TIMESTAMP(),
+			#{userId},
+			CURRENT_TIMESTAMP()
+		)
+	</insert>
+	
+	<!-- 피드 수정 디테일 -->
+	<select id="selectFeedDetail" parameterType="java.util.HashMap" resultType="java.util.HashMap">
+		select      
+	         feed_idx AS feedIdx,
+	         feed_hashtag As feedHashtag,
+	         feed_content AS feedContent,
+	         create_id AS createId,
+	         DATE_FORMAT(create_date, '%Y-%m-%d %H:%i:%s') AS createDate,
+	         update_id AS updateId,
+	         DATE_FORMAT(update_date, '%Y-%m-%d %H:%i:%s') AS updateDate,
+	         <![CDATA[
+               CASE WHEN (timestampdiff(minute, create_date, now()) > 60 && timestampdiff(minute, create_date, now()) < 24*60) THEN concat(timestampdiff(hour, create_date, now()), '시간')
+               WHEN (timestampdiff(minute, create_date, now()) > 24*60) then concat(timestampdiff(day, create_date, now()), '일')
+               ELSE concat(timestampdiff(minute, create_date, now()), '분')  end as timeDiffer
+             ]]>
+	      from tb_feed
+	      WHERE feed_idx = #{feedIdx}
+	</select>
+	
+	<select id="selectFileList" parameterType="java.util.HashMap" resultType="java.util.HashMap">
+		SELECT  file_idx AS fileIdx,
+				feed_idx AS feedIdx,
+				original_file_name AS originalFileName,
+				save_file_name AS saveFileName,
+				file_path AS saveFilePath,
+				file_size AS fileSize,
+				file_ext AS fileExt,
+				create_id AS createId,
+				DATE_FORMAT(create_date, '%Y-%m-%d %H:%i:%s') AS createDate,
+				update_id AS updateId,
+				DATE_FORMAT(update_date, '%Y-%m-%d %H:%i:%s') AS updateDate	
+		FROM tb_file_attr
+		WHERE feed_idx = #{feedIdx}
+		AND use_yn = 'Y'
+	</select>
+
+	<!-- 피드 수정 한 후 저장 -->
+	<update id="saveFeedDetail" parameterType="java.util.HashMap">
+		UPDATE tb_feed
+		SET feed_hashtag = #{feedHashtag},
+			feed_content = #{feedContent},
+			update_id = #{userId},
+			update_date = CURRENT_TIMESTAMP()
+		WHERE feed_idx = #{feedIdx}
+	</update>
+
+	<!-- 피드 삭제 -->
+	<update id="deleteFeed" parameterType="java.util.HashMap">
+		UPDATE tb_feed
+		SET use_yn = 'N',
+		    update_id = #{userId},
+		    update_date = CURRENT_TIMESTAMP()
+		WHERE feed_idx = #{feedIdx}
+	</update>
+	
+	<!-- 수정된 파일에서 파일 삭제 -->
+	<update id="deleteFileList" parameterType="java.util.HashMap">
+		UPDATE tb_file_attr
+		SET use_yn = 'N',
+			update_date = CURRENT_TIMESTAMP(),
+			update_id = #{userId}
+		WHERE file_idx in(${deleteFiles})
+	</update>
+	
+	<!-- 등록 된 파일 전부 삭제  -->
+	<update id="deleteFileInfo" parameterType="java.util.HashMap">
+		UPDATE tb_file_attr
+		SET use_yn = 'N',
+			update_date = CURRENT_TIMESTAMP(),
+			update_id = #{userId}
+		WHERE feed_idx = #{feedIdx}
+	</update>
+	
+	<!-- 대댓글 쿼리 조회 -->
+	<!-- <select id="selectfeedComment" parameterType="java.util.HashMap" resultType="java.util.HashMap">
+		WITH RECURSIVE cte AS (
+		        SELECT 
+		            1 AS comment_level, 
+		            comment_idx, 
+		            comment_content, 
+		            create_id, 
+		            create_date, 
+		            CONVERT(comment_idx, CHAR) AS path, 
+		            parent_comment_idx
+		        FROM tb_comment
+		        WHERE parent_comment_idx IS NULL
+		            AND feed_idx = #{feedIdx}
+		            AND use_yn = 'Y'
+		        UNION ALL
+		        SELECT 
+		            1 + cte.comment_level, 
+		            c.comment_idx, 
+		            c.comment_content, 
+		            c.create_id, 
+		            c.create_date, 
+		            CONCAT(path, '-', c.comment_idx) AS path, 
+		            c.parent_comment_idx
+		        FROM tb_comment c
+		        INNER JOIN cte ON c.parent_comment_idx = cte.comment_idx
+		        WHERE c.feed_idx = #{feedIdx}
+		            AND c.use_yn = 'Y'
+		    )
+		    SELECT 
+		        comment_idx AS commentIdx,
+		        comment_content AS commentContent,
+		        create_id AS createId,
+		        DATE_FORMAT(create_date, '%Y-%m-%d %H:%i:%s') AS createDate,
+		        comment_level - 1 AS commentLevel,
+		        path,
+		        parent_comment_idx AS parentCommentIdx
+		    FROM cte
+		    ORDER BY CONVERT(SUBSTRING_INDEX(path, '-', 1), UNSIGNED) DESC, path
+	</select> -->
+	
+	<insert  id="saveComment" parameterType="java.util.HashMap">
+		INSERT INTO tb_comment  (
+		            feed_idx,
+		            parent_comment_idx,
+		            comment_content,
+		            comment_level,
+		            use_yn,
+		            create_id,
+		            create_date,
+		            update_id,
+		            update_date
+		      ) VALUES (
+		            #{feedIdx},
+		            0,
+		            #{commentContent},
+		            1,
+		            'Y',
+		            #{userId},
+		            CURRENT_TIMESTAMP(),
+		            #{userId},
+		            CURRENT_TIMESTAMP()
+		      )
+	</insert>
+	
+	<!-- 댓글 List -->
+	<select id="selectFeedComment" parameterType="java.util.HashMap" resultType="java.util.HashMap">
+		 SELECT 
+		    comment_idx AS commentIdx, 
+		    feed_idx AS feedIdx, 
+		    parent_comment_idx AS parentCommentIdx, 
+		    comment_content AS commentContent, 
+		    comment_level AS commentLevel, 
+		        use_yn AS useYn, 
+		        create_id AS createId, 
+		        create_date AS createDate
+		    FROM 
+		        tb_comment 
+		    WHERE 
+		        feed_idx = #{feedIdx} 
+		        AND use_yn = 'Y'  
+		    ORDER BY 
+		        create_date ASC 
+	</select>
+	
+	<!-- 댓글 삭제 기능 구현 -->
+	<update id="deleteFeedComment" parameterType="java.util.HashMap">
+	    UPDATE tb_comment
+	    SET use_yn = 'N',
+	        update_id = #{userId},
+	        update_date = CURRENT_TIMESTAMP()
+	    WHERE comment_idx = #{commentIdx}		
+	</update>
+	
+	<!-- 좋아요 기능 -->
+	<insert id="insertFeedLike" parameterType="java.util.HashMap">
+		INSERT INTO tb_feed_like (
+			feed_idx, 
+			user_idx,
+			create_id,
+			create_date,
+			update_id,
+			update_date,
+			use_yn
+			)
+			VALUES (
+			#{feedIdx}, 
+			#{userIdx},
+			#{userId},
+			CURRENT_TIMESTAMP(),
+			#{userId},
+			CURRENT_TIMESTAMP(),
+			'Y'
+		)
+	</insert>
+
+	<update id="updateFeedLike" parameterType="java.util.HashMap">
+		UPDATE tb_feed_like
+			SET use_yn = 'N',
+				update_id = #{userId},
+				update_date = CURRENT_TIMESTAMP()
+			WHERE feed_idx = #{feedIdx}
+		AND user_idx = #{userIdx}
+	</update>
+	
+</mapper>
