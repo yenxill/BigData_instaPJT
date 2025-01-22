@@ -21,8 +21,11 @@
 #### 1) 회원가입/로그인/로그아웃
   - 사용자는 회원가입 후 로그인하여 SNS를 이용하며, 이용하지 않을 시 로그아웃하여 로그인 페이지로 이동합니다.
 
-| <img src="https://github.com/user-attachments/assets/54e0098b-bf85-407d-97ad-b7d9acfcc704" width="50%"> |<img src="https://github.com/user-attachments/assets/5694b60e-abb4-4507-b514-1226725c5712" width="50%"> | 헤더3 |
-| 헤더1 | 헤더2 | 헤더3 |
+| 이미지1                   | 이미지2                   | 이미지3                   |
+|--------------------------|--------------------------|--------------------------|
+| ![이미지1](https://example.com/image1.jpg) | ![이미지2](https://example.com/image2.jpg) | ![이미지3](https://example.com/image3.jpg) |
+
+
 <div> 
 <img src="https://github.com/user-attachments/assets/54e0098b-bf85-407d-97ad-b7d9acfcc704" width="50%"> 
 <img src="https://github.com/user-attachments/assets/5694b60e-abb4-4507-b514-1226725c5712" width="50%"> 
