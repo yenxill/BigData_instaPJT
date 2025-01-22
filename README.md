@@ -34,7 +34,8 @@
 |      <p align="center">회원가입</p>      |     <p align="center">로그인</p>      |     <p align="center">로그아웃</p>    |
 
 ![피드 등록(1)](https://github.com/user-attachments/assets/82af96c7-28ab-4d0e-8fb8-8c9a89ec2265)
-![피드 등록(1)](https://github.com/user-attachments/assets/429cb62a-88c9-4248-96f6-b563dca568da)
+
+![피드 등록(2)](https://github.com/user-attachments/assets/b810dd05-7afa-48b0-9690-9fee29089e6a)
 
 
 #### 3) 피드 좋아요/댓글/해시태그
