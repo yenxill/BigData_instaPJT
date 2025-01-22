@@ -31,12 +31,7 @@
 
 | ![이미지1](https://github.com/user-attachments/assets/82af96c7-28ab-4d0e-8fb8-8c9a89ec2265) | ![이미지2](https://github.com/user-attachments/assets/a9da20dc-1b0d-4256-8f98-5b5330c3d823) | ![이미지3](https://github.com/user-attachments/assets/db72e009-3e9b-435b-a060-a2138eefb652) |
 |-------------------------------------------|-------------------------------------------|-------------------------------------------|
-|      <p align="center">회원가입</p>      |     <p align="center">로그인</p>      |     <p align="center">로그아웃</p>    |
-
-
-![피드 수정](https://github.com/user-attachments/assets/a9da20dc-1b0d-4256-8f98-5b5330c3d823)
-
-![피드 삭제](https://github.com/user-attachments/assets/db72e009-3e9b-435b-a060-a2138eefb652)
+| <p align="center">피드 등록</p>  |  <p align="center">피드 수정</p>  |  <p align="center">피드 삭제</p>  |
 
 
 #### 3) 피드 좋아요/댓글/해시태그
