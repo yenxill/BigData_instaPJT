@@ -29,10 +29,12 @@
 #### 2) 피드 등록/수정/삭제
   - 사용자는 피드를 업로드하고, 업로드한 피드를 수정하거나 삭제할 수 있습니다.
 
-| ![피드 등록(1)](https://github.com/user-attachments/assets/e967538e-1ce2-420c-9201-03c35f677d84) ![피드 등록(2)](https://github.com/user-attachments/assets/d38a2f0f-48d8-4194-912f-03de4a019e75)
- | ![이미지2](https://github.com/user-attachments/assets/5694b60e-abb4-4507-b514-1226725c5712) | ![이미지3](https://github.com/user-attachments/assets/9d6557e5-c3f5-4331-9e8a-8c3b211230c8) |
+| ![이미지1](https://github.com/user-attachments/assets/54e0098b-bf85-407d-97ad-b7d9acfcc704) | ![이미지2](https://github.com/user-attachments/assets/5694b60e-abb4-4507-b514-1226725c5712) | ![이미지3](https://github.com/user-attachments/assets/9d6557e5-c3f5-4331-9e8a-8c3b211230c8) |
 |-------------------------------------------|-------------------------------------------|-------------------------------------------|
 |      <p align="center">회원가입</p>      |     <p align="center">로그인</p>      |     <p align="center">로그아웃</p>    |
+
+![피드 등록(1)](https://github.com/user-attachments/assets/82af96c7-28ab-4d0e-8fb8-8c9a89ec2265)
+![피드 등록(1)](https://github.com/user-attachments/assets/429cb62a-88c9-4248-96f6-b563dca568da)
 
 
 #### 3) 피드 좋아요/댓글/해시태그
