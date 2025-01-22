@@ -23,7 +23,7 @@
 
 | ![이미지1](https://github.com/user-attachments/assets/54e0098b-bf85-407d-97ad-b7d9acfcc704) | ![이미지2](https://github.com/user-attachments/assets/5694b60e-abb4-4507-b514-1226725c5712) | ![이미지3](https://github.com/user-attachments/assets/9d6557e5-c3f5-4331-9e8a-8c3b211230c8) |
 |-------------------------------------------|-------------------------------------------|-------------------------------------------|
-| 이미지1 제목                              | 이미지2 제목                              | 이미지3 제목                              |
+|      <p align="center">회원가입</p>      |     <p align="center">로그인</p>      |     <p align="center">로그아웃</p>    |
 
 
 
