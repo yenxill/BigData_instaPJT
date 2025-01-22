@@ -29,13 +29,17 @@
 #### 2) 피드 등록/수정/삭제
   - 사용자는 피드를 업로드하고, 업로드한 피드를 수정하거나 삭제할 수 있습니다.
 
-| ![이미지1](https://github.com/user-attachments/assets/54e0098b-bf85-407d-97ad-b7d9acfcc704) | ![이미지2](https://github.com/user-attachments/assets/5694b60e-abb4-4507-b514-1226725c5712) | ![이미지3](https://github.com/user-attachments/assets/9d6557e5-c3f5-4331-9e8a-8c3b211230c8) |
+| ![이미지1](https://github.com/user-attachments/assets/82af96c7-28ab-4d0e-8fb8-8c9a89ec2265)(https://github.com/user-attachments/assets/b810dd05-7afa-48b0-9690-9fee29089e6a) | ![이미지2](https://github.com/user-attachments/assets/5694b60e-abb4-4507-b514-1226725c5712) | ![이미지3](https://github.com/user-attachments/assets/9d6557e5-c3f5-4331-9e8a-8c3b211230c8) |
 |-------------------------------------------|-------------------------------------------|-------------------------------------------|
 |      <p align="center">회원가입</p>      |     <p align="center">로그인</p>      |     <p align="center">로그아웃</p>    |
 
 ![피드 등록(1)](https://github.com/user-attachments/assets/82af96c7-28ab-4d0e-8fb8-8c9a89ec2265)
 
 ![피드 등록(2)](https://github.com/user-attachments/assets/b810dd05-7afa-48b0-9690-9fee29089e6a)
+
+![피드 수정](https://github.com/user-attachments/assets/a9da20dc-1b0d-4256-8f98-5b5330c3d823)
+
+![피드 삭제](https://github.com/user-attachments/assets/db72e009-3e9b-435b-a060-a2138eefb652)
 
 
 #### 3) 피드 좋아요/댓글/해시태그
