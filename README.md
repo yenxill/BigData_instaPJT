@@ -48,11 +48,5 @@
 
 | ![이미지1](https://github.com/user-attachments/assets/01e8bef7-6729-451b-9844-1f4279dabcbe) | ![이미지2](https://github.com/user-attachments/assets/5eec61f1-4405-4583-a291-e62e218ecd46) |
 |-------------------------------------------|-------------------------------------------|
-| <p align="center">좋아요</p>  |  <p align="center">댓글/삭제</p>  |
-
-
-![프로필(1)](https://github.com/user-attachments/assets/01e8bef7-6729-451b-9844-1f4279dabcbe)
-
-![프로필(2)](https://github.com/user-attachments/assets/5eec61f1-4405-4583-a291-e62e218ecd46)
-
+| <p align="center">프로필</p>  |  <p align="center">업로드한 피드</p>  |
 
