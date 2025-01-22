@@ -12,7 +12,7 @@
 
   | <p align="center">Frontend</p>  | <p align="center">Backend</p>  | <p align="center">Database</p> |
   |-------------------------|-------------------------|-------------------------|
-  |<img alt="html5" src ="https://img.shields.io/badge/html5-#E34F26.svg?&style=flat-square&logo=html5&logoColor=white"/> | <p align="center">피드 등록</p>   | <p align="center">피드 등록</p>  |
+  |<img alt="html5" src ="https://img.shields.io/badge/html5-#E34F26.svg?&style=flat-square&logo=html5&logoColor=red"/> | <p align="center">피드 등록</p>   | <p align="center">피드 등록</p>  |
 
 
 ## 2. 주요기능
