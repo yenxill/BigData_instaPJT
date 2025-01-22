@@ -10,6 +10,13 @@
   - 전자정부표준프레임워크
   - Server - Apache Tomcat v9.0
 
+  | <p align="center">Frontend</p>  | <p align="center">Backend</p>  | <p align="center">Database</p> |
+  |-------------------------|-------------------------|-------------------------|
+  | <p align="center"> <img src="https://img.shields.io/badge/html5-#E34F26?style=flat-square&logo=html5&logoColor=white"/>
+
+  </p>  | <p align="center">피드 등록</p>   | <p align="center">피드 등록</p>  |
+
+
 ## 2. 주요기능
 
 
