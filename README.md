@@ -36,22 +36,23 @@
 
 #### 3) 피드 좋아요/댓글/해시태그
   - 사용자는 피드에 좋아요를 누르거나 댓글을 작성하고, 사용자가 작성한 댓글을 삭제할 수 있습니다.
-  - 
+  - 사용자는 피드에 해시태그를 작성하고, 해당 해시태그를 통해 관련된 게시글을 검색할 수 있습니다.
 
 | ![이미지1](https://github.com/user-attachments/assets/75337036-bdeb-44a9-ba7e-0f8a8d4a9e5c) | ![이미지2](https://github.com/user-attachments/assets/40cf3ed6-e2b3-42f1-9920-b0450c354df1) | ![이미지3](https://github.com/user-attachments/assets/e059f3ba-72fe-4abe-8ed5-b37b4fe577d8) |
 |-------------------------------------------|-------------------------------------------|-------------------------------------------|
 | <p align="center">좋아요</p>  |  <p align="center">댓글/삭제</p>  |  <p align="center">해시태그</p>  |
 
 
-![좋아요,댓글(1)](https://github.com/user-attachments/assets/75337036-bdeb-44a9-ba7e-0f8a8d4a9e5c)
-
-![좋아요,댓글(2)](https://github.com/user-attachments/assets/40cf3ed6-e2b3-42f1-9920-b0450c354df1)
-
-![해시태그](https://github.com/user-attachments/assets/e059f3ba-72fe-4abe-8ed5-b37b4fe577d8)
-
-
 #### 4) 사용자의 프로필
   - 사용자는 프로필에서 업로드한 피드의 사진과 댓글을 확인할 수 있습니다.
 
+| ![이미지1](https://github.com/user-attachments/assets/01e8bef7-6729-451b-9844-1f4279dabcbe) | ![이미지2](https://github.com/user-attachments/assets/5eec61f1-4405-4583-a291-e62e218ecd46) |
+|-------------------------------------------|-------------------------------------------|
+| <p align="center">좋아요</p>  |  <p align="center">댓글/삭제</p>  |
+
+
+![프로필(1)](https://github.com/user-attachments/assets/01e8bef7-6729-451b-9844-1f4279dabcbe)
+
+![프로필(2)](https://github.com/user-attachments/assets/5eec61f1-4405-4583-a291-e62e218ecd46)
 
 
