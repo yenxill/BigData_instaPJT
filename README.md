@@ -22,9 +22,9 @@
   - 사용자는 회원가입 후 로그인하여 SNS를 이용하며, 이용하지 않을 시 로그아웃하여 로그인 페이지로 이동합니다.
 
 <div> 
-<img src="https://github.com/user-attachments/assets/54e0098b-bf85-407d-97ad-b7d9acfcc704" width="40%"> 
-<img src="https://github.com/user-attachments/assets/5694b60e-abb4-4507-b514-1226725c5712" width="40%"> 
-<img src="https://github.com/user-attachments/assets/9d6557e5-c3f5-4331-9e8a-8c3b211230c8" width="40%">
+<img src="https://github.com/user-attachments/assets/54e0098b-bf85-407d-97ad-b7d9acfcc704" width="60%"> 
+<img src="https://github.com/user-attachments/assets/5694b60e-abb4-4507-b514-1226725c5712" width="60%"> 
+<img src="https://github.com/user-attachments/assets/9d6557e5-c3f5-4331-9e8a-8c3b211230c8" width="60%">
 </div>
 
 
