@@ -38,6 +38,16 @@
   - 사용자는 피드에 좋아요를 누르거나 댓글을 작성하고, 사용자가 작성한 댓글을 삭제할 수 있습니다.
   - 
 
+| ![이미지1](https://github.com/user-attachments/assets/75337036-bdeb-44a9-ba7e-0f8a8d4a9e5c) | ![이미지2](https://github.com/user-attachments/assets/40cf3ed6-e2b3-42f1-9920-b0450c354df1) | ![이미지3](https://github.com/user-attachments/assets/e059f3ba-72fe-4abe-8ed5-b37b4fe577d8) |
+|-------------------------------------------|-------------------------------------------|-------------------------------------------|
+| <p align="center">좋아요</p>  |  <p align="center">댓글/삭제</p>  |  <p align="center">해시태그</p>  |
+
+
+![좋아요,댓글(1)](https://github.com/user-attachments/assets/75337036-bdeb-44a9-ba7e-0f8a8d4a9e5c)
+
+![좋아요,댓글(2)](https://github.com/user-attachments/assets/40cf3ed6-e2b3-42f1-9920-b0450c354df1)
+
+![해시태그](https://github.com/user-attachments/assets/e059f3ba-72fe-4abe-8ed5-b37b4fe577d8)
 
 
 #### 4) 사용자의 프로필
